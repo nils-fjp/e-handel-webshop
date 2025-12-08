@@ -6,9 +6,8 @@ body {
     font-family: system-ui, sans-serif;
 }
 
-
-/* color palette för hemsidan.  */
-:root {
+/* color palette för hemsidan
+{
       "black": "#000000",
       "blue": "#61AFEF",
       "cyan": "#55C2C2",
@@ -18,3 +17,4 @@ body {
       "white": "#E3DADA",
       "yellow": "#E5C07B"
 }
+*/
