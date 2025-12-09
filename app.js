@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Optionally close the menu when a link is clicked (for single-page applications)
         const navItems = navLinks.querySelectorAll("a");
-        navItems.forEach(link => {
+        navItems.forEach((link) => {
             link.addEventListener("click", () => {
                 if (navLinks.classList.contains("active")) {
                     navLinks.classList.remove("active");
