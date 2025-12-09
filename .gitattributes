@@ -1,0 +1,2 @@
+# LF-normalize text for cross-platform compatibility on Windows, Linux, macOS
+* text=auto eol=lf
