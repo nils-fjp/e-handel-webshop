@@ -1,230 +1,64 @@
-/* =============================================
-   NAVIGATION.CSS - Header and Navigation Styles
-   Complete navigation system with responsive menu
-   ============================================= */
-
-/* =============================================
-   HEADER SECTION
-   ============================================= */
-
-header {
-    background: rgba(21, 27, 61, 0.95);
-    backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow-md);
-}
-
-/* Top section of header (logo area) */
-#top {
-    padding: var(--spacing-md) var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-}
-
-.logo {
-    font-size: 1.75rem;
-    font-weight: 800;
-    font-family: 'Space Grotesk', sans-serif;
-}
-
-.logo a {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    transition: transform var(--transition-base);
-    display: inline-block;
-}
-
-.logo a:hover {
-    transform: scale(1.05);
-}
-
-/* =============================================
-   NAVIGATION MENU
-   ============================================= */
-
-#navigation {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Navigation lists */
-nav ul,
-#navList {
+/* NAVBAR */
+/* nav ul {
     list-style: none;
     display: flex;
-    gap: var(--spacing-sm);
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
-
-/* Navigation links */
-nav a,
-.listItems a {
+nav a {
     text-decoration: none;
-    background: var(--surface);
-    padding: 0.75rem 1.75rem;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: all var(--transition-base);
-    border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 0.01em;
-    display: inline-block;
+    background-color: var(--bg-light);
+    padding: 12px 30px; 
+    border-radius: 30px; 
+    font-size: 24px; 
+    color: var(--bg-light); 
+    text-shadow: var(--text-stroke); 
+    font-family: "Grape Nuts", cursive; 
+    transition: all 0.3s ease;
+    border: 1px solid var(--text-dark);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+} */
+nav a:hover {
+    background-color: #dbc994;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
-/* Gradient hover effect on links */
-nav a::before,
-.listItems a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--accent-gradient);
-    opacity: 0;
-    transition: all var(--transition-base);
-    z-index: -1;
-}
-
-nav a:hover::before,
-.listItems a:hover::before {
-    left: 0;
-    opacity: 0.1;
-}
-
-nav a:hover,
-.listItems a:hover {
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
-}
-
-.listItems {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
-
-/* =============================================
-   HAMBURGER MENU
-   ============================================= */
-
+/* HAMBURGUESA */
 .hamburger-menu {
     display: none;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    background: var(--surface);
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-base);
-    z-index: 1001;
+    font-size: 40px;
+    color: var(--bg-light);
+    text-shadow: var(--text-stroke);
+    z-index: 1000;
 }
 
-.hamburger-menu:hover {
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
-    box-shadow: var(--shadow-glow);
-}
-
-/* =============================================
-   RESPONSIVE NAVIGATION (Mobile)
-   ============================================= */
-
+/* Nav responsive (hamburguesa funcional) */
 @media (max-width: 900px) {
-    /* Responsive header adjustments */
-    #top {
-        padding: var(--spacing-md);
-    }
-
-    #navigation {
-        padding: 0;
-    }
-
-    /* Mobile navigation menu */
-    nav#main-nav,
-    #navList {
+    nav#main-nav {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-        background: rgba(21, 27, 61, 0.98);
-        backdrop-filter: blur(20px);
+        align-items: center;
+        background-color: var(--bg-header);
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        border-top: 1px solid var(--border);
-        padding: var(--spacing-md);
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top: 2px solid var(--text-dark);
+        padding: 15px 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
         overflow: hidden;
         max-height: 0;
         opacity: 0;
         z-index: 999;
-        box-shadow: var(--shadow-lg);
-        gap: var(--spacing-sm);
     }
-    
-    /* Active state for mobile menu */
-    nav#main-nav.active,
-    #navList.active {
+    nav#main-nav.active {
         max-height: 500px;
         opacity: 1;
     }
-    
-    /* Vertical navigation layout */
-    nav ul,
-    #navList {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    /* Full width links on mobile */
-    nav a,
-    .listItems a {
-        text-align: center;
-        padding: var(--spacing-md);
-        width: 100%;
-    }
-    
-    .listItems {
-        display: block;
-        width: 100%;
-    }
-    
-    /* Show hamburger menu on mobile */
     .hamburger-menu {
-        display: flex;
-        position: absolute;
-        right: var(--spacing-md);
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-
-@media (max-width: 600px) {
-    .logo {
-        font-size: 1.5rem;
+        display: block;
     }
 }
