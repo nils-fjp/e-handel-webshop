@@ -1,0 +1,315 @@
+/* =============================================
+   CAROUSEL.CSS - News/Offers Carousel Styles
+   Professional carousel with smooth animations
+   ============================================= */
+
+/* =============================================
+   CAROUSEL CONTAINER
+   ============================================= */
+
+#newsPages {
+    position: relative;
+    min-height: 400px;
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* =============================================
+   CAROUSEL SLIDES
+   ============================================= */
+
+.newsPage {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+/* Gradient overlay effect */
+.newsPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-gradient);
+    opacity: 0.03;
+    transition: opacity var(--transition-base);
+}
+
+.newsPage:hover::before {
+    opacity: 0.08;
+}
+
+/* Carousel slide content */
+.carousel-content {
+    text-align: center;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.carousel-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.carousel-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.5;
+}
+
+.carousel-cta {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--accent-gradient);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-glow);
+}
+
+.carousel-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-hover);
+}
+
+/* Carousel icons/emojis */
+.carousel-icon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-md);
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+}
+
+/* =============================================
+   CAROUSEL CONTROLS
+   ============================================= */
+
+/* Navigation arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: all var(--transition-base);
+    z-index: 10;
+    opacity: 0;
+}
+
+#newsPages:hover .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow:hover {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.carousel-arrow-left {
+    left: var(--spacing-lg);
+}
+
+.carousel-arrow-right {
+    right: var(--spacing-lg);
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* =============================================
+   CAROUSEL ANIMATIONS
+   ============================================= */
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInFromRight 0.5s ease;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 0.5s ease;
+}
+
+/* =============================================
+   RESPONSIVE CAROUSEL
+   ============================================= */
+
+@media (max-width: 900px) {
+    #newsPages {
+        min-height: 350px;
+    }
+
+    .newsPage {
+        min-height: 350px;
+        padding: var(--spacing-lg);
+    }
+
+    .carousel-title {
+        font-size: 2rem;
+    }
+
+    .carousel-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .carousel-icon {
+        font-size: 4rem;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-arrow-left {
+        left: var(--spacing-sm);
+    }
+
+    .carousel-arrow-right {
+        right: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 600px) {
+    #newsPages {
+        min-height: 300px;
+    }
+
+    .newsPage {
+        min-height: 300px;
+        padding: var(--spacing-md);
+    }
+
+    .carousel-title {
+        font-size: 1.5rem;
+    }
+
+    .carousel-subtitle {
+        font-size: 1rem;
+    }
+
+    .carousel-icon {
+        font-size: 3rem;
+    }
+
+    .carousel-cta {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    .carousel-arrow {
+        opacity: 1; /* Always visible on mobile */
+    }
+}
+
+/* =============================================
+   SPECIAL OFFER STYLES
+   ============================================= */
+
+.offer-badge {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    background: var(--error);
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-lg);
+    animation: pulse 2s infinite;
+    z-index: 2;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}

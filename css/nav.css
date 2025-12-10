@@ -48,6 +48,14 @@ header {
 }
 
 /* =============================================
+   CART POSITIONING - Task 1.1
+   ============================================= */
+
+.cart-container {
+    margin-left: auto;
+}
+
+/* =============================================
    NAVIGATION MENU
    ============================================= */
 
@@ -156,6 +164,24 @@ nav a:hover,
     /* Responsive header adjustments */
     #top {
         padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        position: relative;
+    }
+    
+    /* Logo stays on left */
+    .logo {
+        flex: 0 0 auto;
+    }
+    
+    /* Hamburger in the middle-right area */
+    .hamburger-menu {
+        display: flex;
+        flex: 0 0 auto;
+    }
+    
+    /* Cart stays on far right with auto margin */
+    .cart-container {
+        flex: 0 0 auto;
     }
 
     #navigation {
@@ -212,19 +238,29 @@ nav a:hover,
         display: block;
         width: 100%;
     }
-
-    /* Show hamburger menu on mobile */
-    .hamburger-menu {
-        display: flex;
-        position: absolute;
-        right: var(--spacing-md);
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
 
 @media (max-width: 600px) {
+    /* Reduce padding in very small screens */
+    #top {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+    
+    /* Smaller logo on very small screens */
     .logo {
         font-size: 1.5rem;
+    }
+    
+    .logo img {
+        height: 32px;
+    }
+    
+    /* Slightly smaller cart and hamburger */
+    .cart-icon,
+    .hamburger-menu {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
     }
 }

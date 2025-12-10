@@ -165,6 +165,9 @@ const App = {
             this.error('Global error caught:', e.error);
         });
         
+        
+        // Setup back-to-top button
+        this.setupBackToTop();
         this.log('✓ Global events configured');
     },
     
@@ -281,6 +284,37 @@ const App = {
         // You can implement a custom notification system here
         // For now, we'll just log it
         this.log(`💬 Notification [${type}]:`, message);
+    },
+
+    /**
+     * Setup back to top button functionality
+     */
+    setupBackToTop() {
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        if (!backToTopBtn) {
+            this.warn('Back to top button not found');
+            return;
+        }
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top on click
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        this.log('✓ Back to top button initialized');
     }
 };
 
