@@ -1,20 +1,4 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: system-ui, sans-serif;
-}
-
-/* color palette för hemsidan
-{
-      "black": "#000000",
-      "blue": "#61AFEF",
-      "cyan": "#55C2C2",
-      "green": "#98C379",
-      "purple": "#DE78DE",
-      "red": "#E06C75",
-      "white": "#E3DADA",
-      "yellow": "#E5C07B"
-}
-*/
+@import url("src/nav.css");
+@import url("src/layout.css");
+/* @import url("resources/color-palette.css"); */
+/* @import url("resources/mobile-responsive.css"); */

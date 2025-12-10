@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+/*header section*/
+header {
+    border: solid black 2px;
+    height: 20vh;
+}
+
+#top {
+    border: solid grey 2px;
+    height: 50%;
+}
+#navigation {
+    border: solid grey 2px;
+    height: 50%;
+}
+#navList {
+    border: solid grey 2px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    justify-self: auto;
+}
+.listItems {
+    border: solid lightgrey 2px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+}
+
+/*main section*/
+main {
+    border: solid black 2px;
+    height: 70vh;
+}
+
+#newsPages {
+    border: solid grey 2px;
+    display: flex;
+    justify-content: center;
+}
+.newsPage {
+    border: solid lightgrey 2px;
+    margin: auto;
+    padding: 3px;
+}
+
+#categories {
+    border: solid grey 2px;
+    display: flex;
+    justify-content: center;
+}
+.category {
+    border: solid lightgrey 2px;
+    margin: auto;
+    padding: 3px;
+}
+
+#products {
+    border: solid grey 2px;
+    display: flex;
+    justify-content: space-between;
+}
+.product {
+    border: solid grey 2px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "img img img img"
+    "img img img img"
+    "title title . ."
+    "desc desc desc desc"jz
+    "price price price price";
+}
+.productImage {
+    border: solid light grey 2px;
+    grid-area: "img";
+}
+.productTitle {
+    border: solid lightgrey 2px;
+    grid-area: "title";
+}
+.productDescription {
+    border: solid lightgrey 2px;
+    grid-area: "desc";
+}
+.productPrice {
+    border: solid lightgrey 2px;
+    grid-area: "price";
+}
+
+footer {
+    border: solid black 2px;
+    height: 10vh;
+}
