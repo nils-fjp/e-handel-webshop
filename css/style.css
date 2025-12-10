@@ -13,19 +13,25 @@
    ============================================= */
 
 /* Base styles - Variables and fundamentals */
-@import url("src/base.css");
+@import url("base.css");
 
 /* Navigation - Header and menu */
-@import url("src/nav.css");
+@import url("nav.css");
 
 /* Layout - Main sections structure */
-@import url("src/layout.css");
+@import url("layout.css");
 
 /* Products - Product cards and display */
-@import url("src/products.css");
+@import url("products.css");
 
 /* Cart - Shopping cart styles */
-@import url("src/cart.css");
+@import url("cart.css");
+
+/* Carousel - Image slider styles */
+@import url("carousel.css");
+
+/* Footer - Page footer styles */
+@import url("footer.css");
 
 /* =============================================
    ARCHITECTURE NOTES:
