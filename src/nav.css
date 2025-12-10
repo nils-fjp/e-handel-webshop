@@ -1,5 +1,5 @@
 /* NAVBAR */
-nav ul {
+/* nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
@@ -18,9 +18,9 @@ nav a {
     transition: all 0.3s ease;
     border: 1px solid var(--text-dark);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+} */
 nav a:hover {
-    background-color: #dbc994; 
+    background-color: #dbc994;
     transform: translateY(-1px);
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
