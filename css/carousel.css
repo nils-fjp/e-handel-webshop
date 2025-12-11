@@ -213,59 +213,7 @@
     animation: slideInFromLeft 0.5s ease;
 }
 
-/* =============================================
-   CATEGORIES SECTION
-   Migrated from layout.css - Product categories grid
-   ============================================= */
 
-#categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.category {
-    background: var(--surface-elevated);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: var(--spacing-md) var(--spacing-sm);
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-primary);
-    transition: all var(--transition-base);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Bottom border animation on categories */
-.category::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--accent-gradient);
-    transform: translateX(-100%);
-    transition: transform var(--transition-base);
-}
-
-.category:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-2px);
-    color: var(--accent-cyan);
-    box-shadow: var(--shadow-sm);
-}
-
-.category:hover::after {
-    transform: translateX(0);
-}
 
 /* =============================================
    RESPONSIVE CAROUSEL AND CATEGORIES
@@ -307,10 +255,6 @@
         right: var(--spacing-sm);
     }
 
-    /* Categories responsive - migrated from layout.css */
-    #categories {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 600px) {
@@ -344,10 +288,7 @@
         opacity: 1; /* Always visible on mobile */
     }
 
-    /* Categories responsive - migrated from layout.css */
-    #categories {
-        grid-template-columns: 1fr;
-    }
+
 }
 
 /* =============================================

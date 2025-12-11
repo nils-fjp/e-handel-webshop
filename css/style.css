@@ -22,7 +22,7 @@
 @import url("base.css");
 
 /* Navigation - Header and menu */
-@import url("nav.css");
+@import url("header.css");
 
 /* Carousel - News slider and categories section */
 @import url("carousel.css");

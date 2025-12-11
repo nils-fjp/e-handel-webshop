@@ -4,14 +4,21 @@
    ============================================= */
 
 /* =============================================
-   CART ICON/BUTTON IN HEADER
+   CART POSITIONING IN HEADER
+   ⚠️ MOVED FROM header.css - belongs here
    ============================================= */
 
 .cart-container {
+    margin-left: auto;
+    flex: 0 0 auto;
     position: relative;
     display: flex;
     align-items: center;
 }
+
+/* =============================================
+   CART ICON/BUTTON IN HEADER
+   ============================================= */
 
 .cart-icon {
     background: var(--surface);
@@ -606,6 +613,12 @@
 }
 
 @media (max-width: 600px) {
+    .cart-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+
     .cart-panel {
         width: 95%;
         max-height: 90vh;
@@ -673,3 +686,12 @@
 .cart-icon.bounce {
     animation: cartBounce 0.5s ease;
 }
+
+/* =============================================
+   FIXES APPLIED:
+   
+   ✅ Added .cart-container positioning (moved from header.css)
+   ✅ Added flex properties for proper layout
+   ✅ Added responsive cart icon sizing
+   ✅ All cart-related styles in one place
+   ============================================= */
