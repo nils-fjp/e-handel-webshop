@@ -24,14 +24,14 @@
 /* Navigation - Header and menu */
 @import url("header.css");
 
+/* Cart - Shopping cart styles */
+@import url("cart.css");
+
 /* Carousel - News slider and categories section */
 @import url("carousel.css");
 
 /* Products - Product cards and display */
 @import url("products.css");
-
-/* Cart - Shopping cart styles */
-@import url("cart.css");
 
 /* Footer - Page footer styles */
 @import url("footer.css");
