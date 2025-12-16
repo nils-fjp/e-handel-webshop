@@ -116,7 +116,11 @@ body::before {
 main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: clamp(
+        min(var(--spacing-lg), var(--spacing-md)),
+        900px,
+        max(var(--spacing-xl), var(--spacing-lg))
+    );
     position: relative;
     z-index: 1;
     min-height: 70vh;
@@ -169,11 +173,11 @@ main {
    Migrated from layout.css
    ============================================= */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     main {
         padding: var(--spacing-lg) var(--spacing-md);
     }
-}
+} */
 
 @media (max-width: 600px) {
     :root {
