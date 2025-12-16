@@ -26,7 +26,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 240px auto 1fr auto;
-    grid-template-areas: 
+    grid-template-areas:
         "img"
         "title"
         "desc"
@@ -44,18 +44,22 @@
    PRODUCT IMAGE
    ============================================= */
 
-.productImage {
+.product-image {
     grid-area: img;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--surface-elevated) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-dark) 0%,
+        var(--surface-elevated) 100%
+    );
     position: relative;
     overflow: hidden;
 }
 
 /* Loading spinner effect for images */
-.productImage::before {
-    content: '';
+.product-image::before {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -69,20 +73,22 @@
 }
 
 @keyframes spin {
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* =============================================
    PRODUCT TITLE
    ============================================= */
 
-.productTitle {
+.product-title {
     grid-area: title;
     padding: var(--spacing-md) var(--spacing-md) 0;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-primary);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     letter-spacing: -0.01em;
 }
 
@@ -90,7 +96,7 @@
    PRODUCT DESCRIPTION
    ============================================= */
 
-.productDescription {
+.product-description {
     grid-area: desc;
     padding: var(--spacing-sm) var(--spacing-md);
     color: var(--text-secondary);
@@ -106,7 +112,7 @@
    PRODUCT PRICE
    ============================================= */
 
-.productPrice {
+.product-price {
     grid-area: price;
     padding: var(--spacing-md);
     border-top: 1px solid var(--border);
@@ -116,30 +122,30 @@
 }
 
 /* Regular price (strikethrough) */
-.regularPrice {
+.regular-price {
     font-size: 1rem;
     color: var(--text-muted);
     text-decoration: line-through;
     font-weight: 400;
 }
 
-.regularPrice::before {
-    content: '$';
+.regular-price::before {
+    content: "$";
 }
 
 /* Discount price (highlighted with gradient) */
-.discountPrice {
+.discount-price {
     font-size: 1.75rem;
     font-weight: 800;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 
-.discountPrice::before {
-    content: '$';
+.discount-price::before {
+    content: "$";
 }
 
 /* =============================================
@@ -153,11 +159,11 @@
 }
 
 @media (max-width: 600px) {
-    .productTitle {
+    .product-title {
         font-size: 1.1rem;
     }
-    
-    .discountPrice {
+
+    .discount-price {
         font-size: 1.5rem;
     }
 }

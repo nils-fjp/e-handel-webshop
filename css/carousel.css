@@ -7,7 +7,7 @@
    CAROUSEL CONTAINER
    ============================================= */
 
-#newsPages {
+#news-pages {
     position: relative;
     min-height: 400px;
     margin-bottom: var(--spacing-2xl);
@@ -17,7 +17,7 @@
    CAROUSEL SLIDES
    ============================================= */
 
-.newsPage {
+.news-page {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -35,7 +35,7 @@
 }
 
 /* Gradient overlay effect */
-.newsPage::before {
+.news-page::before {
     content: "";
     position: absolute;
     top: 0;
@@ -47,7 +47,7 @@
     transition: opacity var(--transition-base);
 }
 
-.newsPage:hover::before {
+.news-page:hover::before {
     opacity: 0.08;
 }
 
@@ -61,7 +61,7 @@
 .carousel-title {
     font-size: 2.5rem;
     font-weight: 800;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -126,7 +126,7 @@
     opacity: 0;
 }
 
-#newsPages:hover .carousel-arrow {
+#news-pages:hover .carousel-arrow {
     opacity: 1;
 }
 
@@ -213,18 +213,16 @@
     animation: slideInFromLeft 0.5s ease;
 }
 
-
-
 /* =============================================
    RESPONSIVE CAROUSEL AND CATEGORIES
    ============================================= */
 
 @media (max-width: 900px) {
-    #newsPages {
+    #news-pages {
         min-height: 350px;
     }
 
-    .newsPage {
+    .news-page {
         min-height: 350px;
         padding: var(--spacing-lg);
     }
@@ -254,7 +252,6 @@
     .carousel-arrow-right {
         right: var(--spacing-sm);
     }
-
 }
 
 @media (max-width: 600px) {
@@ -262,7 +259,7 @@
         min-height: 300px;
     }
 
-    .newsPage {
+    .news-page {
         min-height: 300px;
         padding: var(--spacing-md);
     }
@@ -287,8 +284,6 @@
     .carousel-arrow {
         opacity: 1; /* Always visible on mobile */
     }
-
-
 }
 
 /* =============================================
@@ -311,7 +306,8 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
     50% {
