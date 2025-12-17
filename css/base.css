@@ -58,6 +58,21 @@
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1); /* quick transition */
     --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* base transition */
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* slow transition */
+
+    /* Semantic aliases used by layout */
+    --bg-color: var(--primary-dark);
+    --text-color: var(--text-primary);
+}
+
+/* =============================================
+   LIGHT MODE
+   ============================================= */
+body.light-mode {
+    --bg-color: #f5f6fa;
+    --text-color: #1a1a1a;
+    --header-bg: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #dcdde1;
 }
 
 /* =============================================

@@ -44,18 +44,22 @@
    PRODUCT IMAGE
    ============================================= */
 
-.productImage {
+.product-image {
     grid-area: img;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--surface-elevated) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-dark) 0%,
+        var(--surface-elevated) 100%
+    );
     position: relative;
     overflow: hidden;
 }
 
 /* Loading spinner effect for images */
-.productImage::before {
-    content: '';
+.product-image::before {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -69,20 +73,22 @@
 }
 
 @keyframes spin {
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* =============================================
    PRODUCT TITLE - Mobile First with clamp()
    ============================================= */
 
-.productTitle {
+.product-title {
     grid-area: title;
     padding: clamp(0.75rem, 2vw, 1rem) clamp(0.75rem, 2vw, 1rem) 0;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 700;
     color: var(--text-primary);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     letter-spacing: -0.01em;
 }
 
@@ -90,7 +96,7 @@
    PRODUCT DESCRIPTION - Mobile First with clamp()
    ============================================= */
 
-.productDescription {
+.product-description {
     grid-area: desc;
     padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
     color: var(--text-secondary);
@@ -98,6 +104,7 @@
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     line-clamp: 3;
     overflow: hidden;
@@ -107,7 +114,7 @@
    PRODUCT PRICE - Mobile First with clamp()
    ============================================= */
 
-.productPrice {
+.product-price {
     grid-area: price;
     padding: clamp(0.75rem, 2vw, 1rem);
     border-top: 1px solid var(--border);
@@ -117,30 +124,30 @@
 }
 
 /* Regular price (strikethrough) */
-.regularPrice {
+.regular-price {
     font-size: clamp(0.875rem, 2vw, 1rem);
     color: var(--text-muted);
     text-decoration: line-through;
     font-weight: 400;
 }
 
-.regularPrice::before {
-    content: '$';
+.regular-price::before {
+    content: "$";
 }
 
 /* Discount price (highlighted with gradient) */
-.discountPrice {
+.discount-price {
     font-size: clamp(1.375rem, 3.5vw, 1.75rem);
     font-weight: 800;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 
-.discountPrice::before {
-    content: '$';
+.discount-price::before {
+    content: "$";
 }
 
 /* =============================================
