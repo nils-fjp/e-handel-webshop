@@ -32,6 +32,15 @@
                     </a>
                 </logo>
 
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Toggle light mode"
+                    title="Toggle light mode"
+                >
+                    ☀️
+                </button>
+
                 <div class="hamburger-menu" id="hamburger">☰</div>
 
                 <!-- Shopping Cart Icon -->
@@ -483,19 +492,22 @@
              JAVASCRIPT - Load in correct order
              ============================================ -->
 
-        <!-- 1. Navigation module -->
+        <!-- 1. Theme toggle module -->
+        <script src="js/themeToggle.js" defer></script>
+
+        <!-- 2. Navigation module -->
         <script src="js/nav.js"></script>
 
-        <!-- 2. Shopping cart module -->
+        <!-- 3. Shopping cart module -->
         <script src="js/cart.js"></script>
 
-        <!-- 3. Categories module (when created) -->
+        <!-- 4. Categories module (when created) -->
         <script src="js/categories.js"></script>
 
-        <!-- 4. Carousel module (when created) -->
+        <!-- 5. Carousel module (when created) -->
         <script src="js/carousel.js"></script>
 
-        <!-- 5. Main controller (loads last) -->
+        <!-- 6. Main controller (loads last) -->
         <script src="js/main.js"></script>
     </body>
 </html>
