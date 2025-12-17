@@ -67,13 +67,26 @@ class Carousel {
     setupSlides() {
         this.slides.forEach((slide, index) => {
             slide.classList.remove('active');
-            slide.style.display = index === 0 ? 'flex' : 'none';
-            slide.style.opacity = index === 0 ? '1' : '0';
+            // Ensure all slides have display: flex for proper layout
+            slide.style.display = 'flex';
+            
+            // Use opacity and visibility instead of display to prevent reflow
+            if (index === 0) {
+                slide.style.opacity = '1';
+                slide.style.visibility = 'visible';
+                slide.style.position = 'relative';
+                slide.style.zIndex = '1';
+                slide.classList.add('active');
+            } else {
+                slide.style.opacity = '0';
+                slide.style.visibility = 'hidden';
+                slide.style.position = 'absolute';
+                slide.style.top = '0';
+                slide.style.left = '0';
+                slide.style.width = '100%';
+                slide.style.zIndex = '0';
+            }
         });
-        
-        if (this.slides.length > 0) {
-            this.slides[0].classList.add('active');
-        }
     }
     
     /**
@@ -130,15 +143,24 @@ class Carousel {
         const currentSlide = this.slides[this.currentSlide];
         const nextSlide = this.slides[index];
         
-        // Fade out current
+        // Fade out current - no more display changes!
         currentSlide.style.opacity = '0';
+        currentSlide.style.visibility = 'hidden';
+        currentSlide.style.zIndex = '0';
+        
         setTimeout(() => {
-            currentSlide.style.display = 'none';
+            currentSlide.style.position = 'absolute';
+            currentSlide.style.top = '0';
+            currentSlide.style.left = '0';
+            currentSlide.style.width = '100%';
             currentSlide.classList.remove('active');
         }, this.config.transitionSpeed);
         
-        // Fade in next
-        nextSlide.style.display = 'flex';
+        // Fade in next - smooth transition
+        nextSlide.style.position = 'relative';
+        nextSlide.style.visibility = 'visible';
+        nextSlide.style.zIndex = '1';
+        
         setTimeout(() => {
             nextSlide.style.opacity = '1';
             nextSlide.classList.add('active');
