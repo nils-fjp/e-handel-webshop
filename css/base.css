@@ -63,18 +63,55 @@
     --bg-color: var(--primary-dark);
     --text-color: var(--text-primary);
 }
-
 /* =============================================
    LIGHT MODE
    ============================================= */
 body.light-mode {
+    /* Background and text colors */
     --bg-color: #f5f6fa;
     --text-color: #1a1a1a;
+    
+    /* Main Colors - Light Tech Palette */
+    --primary-dark: #ffffff;
+    --secondary-dark: #f8f9fa;
+    --surface: #ffffff;
+    --surface-elevated: #ffffff;
+    
+    /* Tech Accents - Keep vibrant for light mode */
+    --accent-cyan: #00a8cc;
+    --accent-blue: #0056b3;
+    --accent-purple: #5a5fd4;
+    --accent-gradient: linear-gradient(
+        135deg,
+        #00a8cc 0%,
+        #0056b3 50%,
+        #5a5fd4 100%
+    );
+    
+    /* State Colors - Adjust for light background */
+    --success: #00c851;
+    --warning: #ffbb33;
+    --error: #ff4444;
+    
+    /* Neutral Tones - Darker for light mode */
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+    --border: rgba(0, 0, 0, 0.1);
+    --border-hover: rgba(0, 212, 255, 0.3);
+    
+    /* Effects and Shadows - Softer for light mode */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.2);
+    --shadow-glow-hover: 0 0 30px rgba(0, 212, 255, 0.3);
+    
+    /* Header specific */
     --header-bg: #ffffff;
     --card-bg: #ffffff;
     --border-color: #dcdde1;
 }
-
 /* =============================================
    RESET AND BASE STYLES
    ============================================= */
@@ -87,8 +124,8 @@ body.light-mode {
 
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; /* modern sans-serif font stack */
-    background: var(--primary-dark); /* dark background for tech aesthetic */
-    color: var(--text-primary); /* primary text color */
+    background: var(--bg-color); /* use semantic variable for background */
+    color: var(--text-color); /* use semantic variable for text color */
     line-height: 1.6; /* improved readability */
     overflow-x: hidden; /* prevent horizontal scroll */
     position: relative; /* establish a new stacking context */
@@ -118,12 +155,39 @@ body::before {
             linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px),
         /* vertical grid lines */
             linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px); /* horizontal grid lines */
+   MAIN CONTENT CONTAINER
+   Migrated from layout.css - main page wrapper
+   ============================================= */
+=======
     background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px; /* grid size */
     pointer-events: none; /* allow interactions through the pseudo-element */
     z-index: 0; /* place behind all content */
 }
 
+/* Light mode background effect - more subtle */
+body.light-mode::before {
+    background: radial-gradient(
+            circle at 20% 50%,
+            rgba(0, 168, 204, 0.03) 0%,
+            transparent 50%
+        ),
+        /* subtle cyan glow for light mode */
+            radial-gradient(
+                circle at 80% 80%,
+                rgba(90, 95, 212, 0.03) 0%,
+                transparent 50%
+            ),
+        /* subtle purple glow for light mode */
+            linear-gradient(90deg, rgba(0, 168, 204, 0.01) 1px, transparent 1px),
+        /* vertical grid lines for light mode */
+            linear-gradient(rgba(0, 168, 204, 0.01) 1px, transparent 1px); /* horizontal grid lines for light mode */
+    background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px; /* grid size */
+}
+
 /* =============================================
+   MAIN CONTENT CONTAINER
+   Migrated from layout.css - main page wrapper
+   ============================================= */=============================================
    MAIN CONTENT CONTAINER
    Migrated from layout.css - main page wrapper
    ============================================= */

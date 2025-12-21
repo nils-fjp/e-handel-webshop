@@ -1,4 +1,41 @@
+   THEME TOGGLE BUTTON
+   ============================================= */
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--border-color);
+}
+=======
 /* =============================================
+   THEME TOGGLE BUTTON
+   ============================================= */
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+    transition: all var(--transition-base);
+}
+
+.theme-toggle:hover {
+    background-color: var(--border-color);
+    color: var(--accent-cyan);
+}=============================================
    HEADER.CSS - FIXED Responsive Logo System
    Only one logo visible at a time
    ============================================= */
@@ -8,7 +45,7 @@
    ============================================= */
 
 header {
-    background: rgba(21, 27, 61, 0.95);
+    background: var(--header-bg);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--border);

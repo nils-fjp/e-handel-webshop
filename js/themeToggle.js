@@ -1,15 +1,50 @@
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light-mode");
+// Initialize theme based on localStorage or system preference
+function initializeTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (savedTheme === "light") {
+        body.classList.add("light-mode");
+        updateToggleButton(true);
+    } else if (savedTheme === "dark") {
+        body.classList.remove("light-mode");
+        updateToggleButton(false);
+    } else if (prefersDark) {
+        // Default to dark mode if system prefers dark and no preference is saved
+        body.classList.remove("light-mode");
+        updateToggleButton(false);
+    } else {
+        // Default to light mode
+        body.classList.add("light-mode");
+        updateToggleButton(true);
+    }
+}
+
+// Update toggle button text and aria-label based on current mode
+function updateToggleButton(isLightMode) {
+    if (isLightMode) {
+        toggle.textContent = "🌙";
+        toggle.setAttribute("aria-label", "Toggle dark mode");
+        toggle.setAttribute("title", "Toggle dark mode");
+    } else {
+        toggle.textContent = "☀️";
+        toggle.setAttribute("aria-label", "Toggle light mode");
+        toggle.setAttribute("title", "Toggle light mode");
+    }
 }
 
 toggle.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
+    const isLightMode = body.classList.toggle("light-mode");
+    updateToggleButton(isLightMode);
 
     localStorage.setItem(
         "theme",
-        body.classList.contains("light-mode") ? "light" : "dark"
+        isLightMode ? "light" : "dark"
     );
 });
+
+// Initialize theme on page load
+initializeTheme();
