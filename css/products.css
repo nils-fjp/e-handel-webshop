@@ -57,6 +57,14 @@
     overflow: hidden;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
 /* Loading spinner effect for images */
 .product-image::before {
     content: "";
@@ -70,6 +78,13 @@
     border-top-color: var(--accent-cyan);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.product-image.is-loaded::before {
+    opacity: 0;
+    animation: none;
 }
 
 @keyframes spin {
