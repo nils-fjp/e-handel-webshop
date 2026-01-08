@@ -97,6 +97,24 @@ class Carousel {
      * Create navigation controls
      */
     createControls() {
+        // Create navigation arrows
+        const prevButton = document.createElement("button");
+        prevButton.className = "carousel-arrow carousel-arrow-left";
+        prevButton.type = "button";
+        prevButton.setAttribute("aria-label", "Previous slide");
+        prevButton.textContent = "<";
+
+        const nextButton = document.createElement("button");
+        nextButton.className = "carousel-arrow carousel-arrow-right";
+        nextButton.type = "button";
+        nextButton.setAttribute("aria-label", "Next slide");
+        nextButton.textContent = ">";
+
+        this.container.appendChild(prevButton);
+        this.container.appendChild(nextButton);
+        this.prevButton = prevButton;
+        this.nextButton = nextButton;
+
         // Create indicators
         const indicatorsDiv = document.createElement("div");
         indicatorsDiv.className = "carousel-indicators";
@@ -117,6 +135,12 @@ class Carousel {
      * Setup event listeners
      */
     setupEventListeners() {
+        // Arrow clicks
+        if (this.prevButton && this.nextButton) {
+            this.prevButton.addEventListener("click", () => this.previous());
+            this.nextButton.addEventListener("click", () => this.next());
+        }
+
         // Indicator clicks
         this.indicators.forEach((indicator) => {
             indicator.addEventListener("click", () => {
