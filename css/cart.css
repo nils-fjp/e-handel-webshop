@@ -9,7 +9,7 @@
    ============================================= */
 
 .cart-container {
-    margin-left: auto;
+    margin-left: 0;
     flex: 0 0 auto;
     position: relative;
     display: flex;

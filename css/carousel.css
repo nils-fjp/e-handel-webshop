@@ -44,7 +44,7 @@
     pointer-events: none;
 }
 
-.newsPage.active {
+.news-page.active {
     opacity: 1;
     visibility: visible;
     position: relative;
@@ -146,12 +146,14 @@
 
 #news-pages:hover .carousel-arrow {
     opacity: 1;
+}
+
 @media (min-width: 601px) {
     .carousel-arrow {
         opacity: 0;
     }
     
-    #newsPages:hover .carousel-arrow {
+    #news-pages:hover .carousel-arrow {
         opacity: 1;
     }
 }
@@ -281,7 +283,7 @@
 }
 
 @media (max-width: 600px) {
-    #newsPages {
+    #news-pages {
         min-height: 300px;
     }
 
