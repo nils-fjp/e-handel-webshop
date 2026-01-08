@@ -59,10 +59,6 @@ footer::before {
     font-size: clamp(1rem, 2.2vw, 1.1rem);
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
 }
 
@@ -308,3 +304,4 @@ footer::before {
    - Much cleaner than 2-3 media queries with fixed values
    - Seamless adaptation across ALL screen sizes
    ============================================= */
+   

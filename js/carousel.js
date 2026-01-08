@@ -70,26 +70,7 @@ class Carousel {
      */
     setupSlides() {
         this.slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            // Ensure all slides have display: flex for proper layout
-            slide.style.display = 'flex';
-            
-            // Use opacity and visibility instead of display to prevent reflow
-            if (index === 0) {
-                slide.style.opacity = '1';
-                slide.style.visibility = 'visible';
-                slide.style.position = 'relative';
-                slide.style.zIndex = '1';
-                slide.classList.add('active');
-            } else {
-                slide.style.opacity = '0';
-                slide.style.visibility = 'hidden';
-                slide.style.position = 'absolute';
-                slide.style.top = '0';
-                slide.style.left = '0';
-                slide.style.width = '100%';
-                slide.style.zIndex = '0';
-            }
+            slide.classList.toggle("active", index === 0);
         });
     }
 
@@ -171,28 +152,8 @@ class Carousel {
         const currentSlide = this.slides[this.currentSlide];
         const nextSlide = this.slides[index];
         
-        // Fade out current - no more display changes!
-        currentSlide.style.opacity = '0';
-        currentSlide.style.visibility = 'hidden';
-        currentSlide.style.zIndex = '0';
-        
-        setTimeout(() => {
-            currentSlide.style.position = 'absolute';
-            currentSlide.style.top = '0';
-            currentSlide.style.left = '0';
-            currentSlide.style.width = '100%';
-            currentSlide.classList.remove('active');
-        }, this.config.transitionSpeed);
-        
-        // Fade in next - smooth transition
-        nextSlide.style.position = 'relative';
-        nextSlide.style.visibility = 'visible';
-        nextSlide.style.zIndex = '1';
-        
-        setTimeout(() => {
-            nextSlide.style.opacity = "1";
-            nextSlide.classList.add("active");
-        }, 50);
+        currentSlide.classList.remove("active");
+        nextSlide.classList.add("active");
 
         // Update indicators
         this.indicators[this.currentSlide].classList.remove("active");
@@ -257,61 +218,6 @@ class Carousel {
 }
 
 // =============================================
-// ADD CAROUSEL STYLES
-// =============================================
-
-function addCarouselStyles() {
-    // Check if styles already exist
-    if (document.getElementById("carousel-styles")) {
-        return;
-    }
-
-    const style = document.createElement("style");
-    style.id = "carousel-styles";
-    style.textContent = `
-        .news-page {
-            transition: opacity 0.5s ease;
-        }
-        
-        .carousel-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        
-        .carousel-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-indicator:hover {
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.2);
-        }
-        
-        .carousel-indicator.active {
-            background: var(--accent-cyan, #00d4ff);
-            border-color: var(--accent-cyan, #00d4ff);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-        
-        #news-pages {
-            position: relative;
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// =============================================
 // INITIALIZE CAROUSEL
 // =============================================
 
@@ -323,9 +229,6 @@ if (document.readyState === "loading") {
 }
 
 function initCarousel() {
-    // Add styles
-    addCarouselStyles();
-
     // Create carousel instance
     window.Carousel = new Carousel("#news-pages", {
         autoPlay: true,

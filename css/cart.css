@@ -145,10 +145,6 @@
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .cart-close {
@@ -285,10 +281,6 @@
 .cart-item-price {
     font-size: clamp(1rem, 2.2vw, 1.1rem);
     font-weight: 700;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     font-family: 'JetBrains Mono', monospace;
 }
 
@@ -417,10 +409,6 @@
 .cart-total .cart-summary-value {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 800;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 /* =============================================

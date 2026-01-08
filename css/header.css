@@ -46,10 +46,6 @@ header {
 }
 
 .logo a {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-decoration: none;
     letter-spacing: -0.02em;
     transition: transform var(--transition-base);
