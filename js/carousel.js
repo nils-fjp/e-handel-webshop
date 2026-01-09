@@ -16,18 +16,18 @@ class Carousel {
 
         // Configuration
         this.config = {
-            autoPlay: options.autoPlay !== false,
-            interval: options.interval || 5000,
-            transitionSpeed: options.transitionSpeed || 500,
-            pauseOnHover: options.pauseOnHover !== false,
+            autoPlay: options.autoPlay !== false,  // If not specified, defaults to true
+            interval: options.interval || 5000,  // Time between slides (5 seconds default)
+            transitionSpeed: options.transitionSpeed || 500,  // Animation speed (0.5s default)
+            pauseOnHover: options.pauseOnHover !== false,  // Pause on mouse hover (true default)
         };
 
-        this.currentSlide = 0;
-        this.slides = [];
-        this.isPlaying = false;
-        this.timer = null;
+        this.currentSlide = 0;  // Current slide index (starts at 0)
+        this.slides = [];  // Array to store the slides
+        this.isPlaying = false;  // Whether autoplay is active
+        this.timer = null;  // Reference to setInterval/setTimeout
 
-        this.init();
+        this.init();  // Call initialization method
     }
 
     /**
@@ -147,18 +147,22 @@ class Carousel {
      * Go to specific slide
      */
     goToSlide(index) {
+        // Validate index is within bounds
         if (index < 0 || index >= this.slides.length) return;
 
+        // Get references to current and next slide elements
         const currentSlide = this.slides[this.currentSlide];
         const nextSlide = this.slides[index];
         
+        // Remove active class from current slide and add to next slide
         currentSlide.classList.remove("active");
         nextSlide.classList.add("active");
 
-        // Update indicators
+        // Update indicator dots to reflect current slide
         this.indicators[this.currentSlide].classList.remove("active");
         this.indicators[index].classList.add("active");
 
+        // Update current slide index
         this.currentSlide = index;
     }
 

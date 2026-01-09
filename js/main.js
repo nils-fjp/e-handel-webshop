@@ -36,24 +36,39 @@ const App = {
      * Initialize the application
      * Called when DOM is fully loaded
      */
-    init() {
+ init() {
+        // Log initialization start message
         this.log('🚀 Initializing Neon Market...');
         
         try {
             // Initialize all modules in order
+            
+            // Initialize shopping cart functionality
             this.initCart();
+            
+            // Setup site navigation
             this.initNavigation();
+            
+            // Initialize category filtering system
             this.initCategories();
+            
+            // Setup image carousel
             this.initCarousel();
+            
+            // Configure product image handling
             this.initProductImages();
             
-            // Setup global event listeners
+            // Setup global event listeners for the entire application
             this.setupGlobalEvents();
             
+            // Log successful initialization
             this.log('✅ Application initialized successfully!');
+            
+            // Display status of all modules
             this.logModuleStatus();
             
         } catch (error) {
+            // Catch and log any initialization errors
             this.error('❌ Failed to initialize application:', error);
         }
     },
@@ -134,34 +149,46 @@ const App = {
     },
 
     /**
-     * Initialize product images
-     */
+/**
+      * Initialize product images
+      */
     initProductImages() {
+        // Select all product images from the DOM
         const images = document.querySelectorAll('.product-image img');
+        
+        // Exit if no images are found
         if (images.length === 0) {
             return;
         }
 
+        // Iterate through each image
         images.forEach((img) => {
+            // Find the parent wrapper element
             const wrapper = img.closest('.product-image');
+            
+            // Skip if wrapper doesn't exist
             if (!wrapper) {
                 return;
             }
 
+            // Function to mark image as loaded
             const markLoaded = () => {
                 wrapper.classList.add('is-loaded');
             };
 
+            // Check if image is already loaded in cache
             if (img.complete && img.naturalWidth > 0) {
                 markLoaded();
                 return;
             }
 
+            // Listen for successful image load (once only)
             img.addEventListener('load', markLoaded, { once: true });
+            
+            // Also mark as loaded if image fails to load (once only)
             img.addEventListener('error', markLoaded, { once: true });
         });
     },
-    
     // =========================================
     // GLOBAL EVENT HANDLERS
     // =========================================

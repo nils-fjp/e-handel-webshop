@@ -40,34 +40,47 @@ class CategoryManager {
     }
     
     /**
+ /**
      * Filter products by category
      */
     filterByCategory(category) {
+        // Log which category is being filtered
         console.log(`[Categories] Filtering by: ${category}`);
+        
+        // Store the current selected category
         this.currentCategory = category;
         
+        // Get all product elements from the DOM
         const products = document.querySelectorAll('.product');
+        
+        // Counter for visible products
         let visibleCount = 0;
         
+        // Iterate through each product
         products.forEach(product => {
+            // Get the product's category from data attribute
             const productCategory = product.dataset.category;
             
+            // Check if product should be visible
             if (category === 'all' || productCategory === category) {
+                // Show the product
                 product.style.display = 'grid';
-                // Add fade-in animation
+                // Add fade-in animation effect
                 product.style.animation = 'fadeIn 0.3s ease';
+                // Increment visible product counter
                 visibleCount++;
             } else {
+                // Hide products that don't match the selected category
                 product.style.display = 'none';
             }
         });
         
+        // Log how many products are now visible
         console.log(`[Categories] ${visibleCount} products visible`);
         
-        // Emit custom event for other modules
+        // Emit custom event for other modules to react to the change
         this.emitCategoryChange(category, visibleCount);
     }
-    
     /**
      * Show all products
      */
