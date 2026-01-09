@@ -107,10 +107,6 @@ body.light-mode {
     --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.2);
     --shadow-glow-hover: 0 0 30px rgba(0, 212, 255, 0.3);
     
-    /* Header specific */
-    --header-bg: #ffffff;
-    --card-bg: #ffffff;
-    --border-color: #dcdde1;
 }
 /* =============================================
    RESET AND BASE STYLES
