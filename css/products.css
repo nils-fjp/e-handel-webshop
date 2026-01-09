@@ -57,6 +57,14 @@
     overflow: hidden;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
 /* Loading spinner effect for images */
 .product-image::before {
     content: "";
@@ -70,6 +78,13 @@
     border-top-color: var(--accent-cyan);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.product-image.is-loaded::before {
+    opacity: 0;
+    animation: none;
 }
 
 @keyframes spin {
@@ -106,7 +121,6 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    line-clamp: 3;
     overflow: hidden;
 }
 
@@ -139,10 +153,6 @@
 .discount-price {
     font-size: clamp(1.375rem, 3.5vw, 1.75rem);
     font-weight: 800;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     font-family: "JetBrains Mono", monospace;
 }
 

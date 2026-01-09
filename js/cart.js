@@ -223,7 +223,7 @@ class ShoppingCart {
             </div>
             <div class="cart-item-info">
                 <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                <div class="cart-item-price text-gradient">$${item.price.toFixed(2)}</div>
                 <div class="cart-item-quantity">
                     <button class="quantity-btn" data-id="${item.id}" data-action="decrease">−</button>
                     <span class="quantity-value">${item.quantity}</span>

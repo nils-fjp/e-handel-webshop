@@ -45,6 +45,7 @@ const App = {
             this.initNavigation();
             this.initCategories();
             this.initCarousel();
+            this.initProductImages();
             
             // Setup global event listeners
             this.setupGlobalEvents();
@@ -130,6 +131,35 @@ const App = {
         } else {
             this.log('⚠ Carousel module not yet implemented');
         }
+    },
+
+    /**
+     * Initialize product images
+     */
+    initProductImages() {
+        const images = document.querySelectorAll('.product-image img');
+        if (images.length === 0) {
+            return;
+        }
+
+        images.forEach((img) => {
+            const wrapper = img.closest('.product-image');
+            if (!wrapper) {
+                return;
+            }
+
+            const markLoaded = () => {
+                wrapper.classList.add('is-loaded');
+            };
+
+            if (img.complete && img.naturalWidth > 0) {
+                markLoaded();
+                return;
+            }
+
+            img.addEventListener('load', markLoaded, { once: true });
+            img.addEventListener('error', markLoaded, { once: true });
+        });
     },
     
     // =========================================

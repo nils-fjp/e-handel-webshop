@@ -44,7 +44,7 @@
     pointer-events: none;
 }
 
-.newsPage.active {
+.news-page.active {
     opacity: 1;
     visibility: visible;
     position: relative;
@@ -79,10 +79,6 @@
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: 800;
     font-family: "Space Grotesk", sans-serif;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: clamp(0.75rem, 2vw, 1rem);
     line-height: 1.2;
 }
@@ -142,16 +138,21 @@
     transition: all var(--transition-base);
     z-index: 10;
     opacity: 1; /* Always visible on mobile, hidden on hover for desktop */
+    padding: 0;
+    line-height: 1;
+    font-family: inherit;
 }
 
 #news-pages:hover .carousel-arrow {
     opacity: 1;
+}
+
 @media (min-width: 601px) {
     .carousel-arrow {
         opacity: 0;
     }
     
-    #newsPages:hover .carousel-arrow {
+    #news-pages:hover .carousel-arrow {
         opacity: 1;
     }
 }
@@ -206,50 +207,12 @@
 }
 
 /* =============================================
-   CAROUSEL ANIMATIONS
-   ============================================= */
-
-@keyframes slideInFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.slide-in-right {
-    animation: slideInFromRight 0.5s ease;
-}
-
-.slide-in-left {
-    animation: slideInFromLeft 0.5s ease;
-}
-
-/* =============================================
    RESPONSIVE CAROUSEL AND CATEGORIES
    ============================================= */
 
 @media (max-width: 900px) {
-    #news-pages {
-        min-height: 350px;
-    }
 
     .news-page {
-        min-height: 350px;
         padding: var(--spacing-lg);
     }
 
@@ -281,12 +244,8 @@
 }
 
 @media (max-width: 600px) {
-    #newsPages {
-        min-height: 300px;
-    }
-
+    
     .news-page {
-        min-height: 300px;
         padding: var(--spacing-md);
     }
 
