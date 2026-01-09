@@ -1,0 +1,64 @@
+/* =============================================
+   STYLE.CSS - Main Stylesheet
+   Tech Store - Modular CSS Architecture
+   
+   Import Order:
+   1. base.css       - Variables, reset, utilities, and main container
+   2. nav.css        - Header and navigation styles
+   3. carousel.css   - Carousel/news slider and categories section
+   4. products.css   - Product cards and grid
+   5. cart.css       - Shopping cart styles
+   6. footer.css     - Page footer styles
+   
+   ⚠️ IMPORTANT: layout.css has been REMOVED
+   Reason: All content has been migrated to appropriate files:
+   - Main container → base.css
+   - Categories → carousel.css
+   - News section → carousel.css (already existed)
+   - Footer → footer.css (already existed)
+   ============================================= */
+
+/* Base styles - Variables, fundamentals, and main container */
+@import url("base.css");
+
+/* Navigation - Header and menu */
+@import url("header.css");
+
+/* Cart - Shopping cart styles */
+@import url("cart.css");
+
+/* Carousel - News slider and categories section */
+@import url("carousel.css");
+
+/* Products - Product cards and display */
+@import url("products.css");
+
+/* Footer - Page footer styles */
+@import url("footer.css");
+
+/* =============================================
+   ARCHITECTURE NOTES:
+   
+   This modular approach provides:
+   - Easy maintenance and debugging
+   - Clear separation of concerns
+   - Better code organization
+   - Scalability for future features
+   - Team collaboration friendly
+   - No duplicate code (DRY principle)
+   
+   Migration from layout.css:
+   - Main container styles → Moved to base.css (fundamental layout)
+   - Categories section → Moved to carousel.css (related UI component)
+   - Responsive rules → Distributed to respective files
+   
+   Benefits of removing layout.css:
+   ✅ No duplicate code (was 50% redundant)
+   ✅ Single source of truth for each component
+   ✅ Smaller total CSS file size
+   ✅ Easier debugging and maintenance
+   ✅ Clear responsibility for each file
+   
+   To use: Simply link style.css in your HTML
+   All other files will be imported automatically
+   ============================================= */

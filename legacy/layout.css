@@ -1,0 +1,301 @@
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+/*header section
+header {
+    border: solid black 2px;
+    height: 20vh;
+}
+
+#top {
+    border: solid grey 2px;
+    height: 50%;
+}
+
+.logo {
+    border: solid lightgrey 2px;
+    display: inline;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: var(--bg-light);
+    text-shadow: var(--text-stroke);
+    z-index: 1000;
+}
+
+#navigation {
+    border: solid grey 2px;
+    height: 50%;
+}
+#navList {
+    border: solid grey 2px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    justify-self: auto;
+}
+.listItems {
+    border: solid lightgrey 2px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+}
+
+/*main section
+main {
+    border: solid black 2px;
+    height: 70vh;
+}
+
+/* news 
+#newsPages {
+    border: solid grey 2px;
+    display: flex;
+    justify-content: center;
+}
+.newsPage {
+    border: solid lightgrey 2px;
+    margin: auto;
+    min-height: 300px;
+    min-width: 400px;
+    padding: 3px;
+}
+/* category section 
+
+#categories {
+    border: solid grey 2px;
+    display: flex;
+    justify-content: center;
+}
+.category {
+    border: solid lightgrey 2px;
+    min-width: 100px;
+    min-height: 75px;
+    margin: auto;
+    padding: 3px;
+}
+
+/* product section 
+
+#products {
+    border: solid grey 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+.product {
+    border: solid grey 2px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas:
+        "img img img img"
+        "img img img img"
+        "title title . ."
+        "desc desc desc desc" jz
+        "price price price price";
+}
+.productImage {
+    border: solid light grey 2px;
+    grid-area: "img";
+}
+.productTitle {
+    border: solid lightgrey 2px;
+    grid-area: "title";
+}
+.productDescription {
+    border: solid lightgrey 2px;
+    grid-area: "desc";
+}
+.productPrice {
+    border: solid lightgrey 2px;
+    grid-area: "price";
+}
+
+footer {
+    border: solid black 2px;
+    height: 10vh;
+}
+ */
+
+/* =============================================
+   LAYOUT.CSS - Main Content Structure
+   Layout styles for main sections, news, categories
+   ============================================= */
+
+/* =============================================
+   MAIN CONTENT CONTAINER
+   ============================================= */
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+    min-height: 70vh;
+}
+
+/* =============================================
+   NEWS SECTION
+   ============================================= */
+
+#newsPages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.newsPage {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Gradient overlay effect on news cards */
+.newsPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.newsPage:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-hover);
+}
+
+.newsPage:hover::before {
+    opacity: 0.05;
+}
+
+/* =============================================
+   CATEGORIES SECTION
+   ============================================= */
+
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.category {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--spacing-md) var(--spacing-sm);
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bottom border animation on categories */
+.category::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-gradient);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+}
+
+.category:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    color: var(--accent-cyan);
+    box-shadow: var(--shadow-sm);
+}
+
+.category:hover::after {
+    transform: translateX(0);
+}
+
+/* =============================================
+   FOOTER SECTION
+   ============================================= */
+
+footer {
+    background: var(--secondary-dark);
+    border-top: 1px solid var(--border);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+    color: var(--text-secondary);
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =============================================
+   RESPONSIVE LAYOUT
+   ============================================= */
+
+@media (max-width: 900px) {
+    main {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    #newsPages {
+        grid-template-columns: 1fr;
+    }
+
+    #categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+
+    #categories {
+        grid-template-columns: 1fr;
+    }
+}

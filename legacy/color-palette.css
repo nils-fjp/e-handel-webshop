@@ -1,12 +1,5 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    font-family: system-ui, sans-serif;
-}
-
-/* color palette för hemsidan
+/* color palette för hemsidan *
 {
       "black": "#000000",
       "blue": "#61AFEF",
@@ -17,4 +10,3 @@ body {
       "white": "#E3DADA",
       "yellow": "#E5C07B"
 }
-*/
