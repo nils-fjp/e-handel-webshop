@@ -8,8 +8,6 @@
    ============================================= */
 
 header {
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -22,12 +20,15 @@ header {
    ============================================= */
 
 #top {
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: 0 var(--spacing-sm);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
   border-bottom: 1px solid var(--border);
   position: relative;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 /* =============================================
@@ -102,6 +103,9 @@ header {
 #categories {
   position: relative;
   width: 100%;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 /* Navigation container */
@@ -232,11 +236,14 @@ nav a[data-category].active {
     left: 0;
     width: 100%;
     z-index: 999;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   /* Navigation container styling */
   nav#main-nav {
-    background: var(--surface);
+    background: color-mix(in srgb, var(--surface) 85%, transparent);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
