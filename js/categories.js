@@ -22,6 +22,7 @@ class CategoryManager {
                 const category = link.dataset.category;
                 this.filterByCategory(category);
                 this.setActiveLink(link);
+                this.scrollToProducts();
             });
         });
     }
@@ -59,6 +60,22 @@ class CategoryManager {
         });
 
         activeLink.classList.add('active');
+    }
+
+    scrollToProducts() {
+        const productsSection = document.getElementById('products');
+        if (!productsSection) {
+            return;
+        }
+
+        const rect = productsSection.getBoundingClientRect();
+        if (rect.top > 0) {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const gap = parseFloat(getComputedStyle(productsSection).gap) || 0;
+            const targetY = window.pageYOffset + rect.top - headerHeight - gap;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
     }
 
     emitCategoryChange(category, count) {
