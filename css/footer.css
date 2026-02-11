@@ -12,7 +12,6 @@ footer {
   border-top: 1px solid var(--border);
   padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem)
     clamp(1rem, 2vw, 1.5rem);
-  margin-top: clamp(2rem, 5vw, 3rem);
   position: relative;
   z-index: 1;
 }

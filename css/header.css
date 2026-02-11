@@ -43,6 +43,7 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  padding: var(--spacing-xs);
 }
 
 .logo a {
@@ -218,10 +219,7 @@ nav a[data-category].active {
 
   /* Top section adjustments - Flex layout for mobile header */
   #top {
-    padding: var(--spacing-xs) var(--spacing-md);
     gap: var(--spacing-sm);
-    display: flex;
-    align-items: center;
   }
 
   /* Hamburger menu visible on mobile */
@@ -334,7 +332,6 @@ nav a[data-category].active {
   }
 
   #top {
-    padding: var(--spacing-xs) var(--spacing-sm);
     gap: var(--spacing-xs);
   }
 
