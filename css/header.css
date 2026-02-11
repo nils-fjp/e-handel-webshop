@@ -168,6 +168,13 @@ nav#main-nav {
     box-shadow: var(--shadow-glow);
 }
 
+/* Active category link */
+nav a[data-category].active {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    background: rgba(0, 212, 255, 0.1);
+}
+
 /* =============================================
    HAMBURGER MENU
    ============================================= */
