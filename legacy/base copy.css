@@ -17,14 +17,14 @@
   --surface-elevated: #222a4f;
 
   /* Tech Accents */
-  --accent-cyan: #44c2c2;
+  --accent-cyan: #00d4ff;
   --accent-blue: #0066ff;
   --accent-purple: #6366f1;
   --accent-gradient: linear-gradient(
-    130deg,
-    #44c2c2 0%,
-    #0066ff 45%,
-    #8e63f1 100%
+    135deg,
+    #00d4ff 0%,
+    #0066ff 50%,
+    #6366f1 100%
   );
 
   /* State Colors */
@@ -36,15 +36,15 @@
   --text-primary: #e8edf5;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --border: rgba(68, 194, 194, 0.2);
-  --border-hover: rgba(68, 194, 194, 0.3);
+  --border: rgba(100, 116, 139, 0.2);
+  --border-hover: rgba(0, 212, 255, 0.3);
 
   /* Effects and Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3); /* subtle shadow */
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4); /* moderate shadow */
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5); /* strong shadow */
-  --shadow-glow: 0 0 20px rgba(68, 194, 194, 0.3); /* glow effect */
-  --shadow-glow-hover: 0 0 30px rgba(68, 194, 194, 0.5); /* intensified glow on hover */
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3); /* glow effect */
+  --shadow-glow-hover: 0 0 30px rgba(0, 212, 255, 0.5); /* intensified glow on hover */
 
   /* Spacing System */
   --spacing-xs: clamp(0.375rem, 1vw, 0.5rem); /* extra small spacing */
@@ -69,43 +69,43 @@
 body.light-mode {
   /* Background and text colors */
   --bg-color: #f5f6fa;
-  --text-color: #202020;
+  --text-color: #1a1a1a;
 
   /* Main Colors - Light Tech Palette */
   --primary-dark: #ffffff;
-  --secondary-dark: #f5f6fa;
+  --secondary-dark: #f8f9fa;
   --surface: #ffffff;
-  --surface-elevated: #f5f6fa;
+  --surface-elevated: #ffffff;
 
   /* Tech Accents - Keep vibrant for light mode */
-  --accent-cyan: #44c2c2;
-  --accent-blue: #4aa5f0;
-  --accent-purple: #de62de;
+  --accent-cyan: #00a8cc;
+  --accent-blue: #0056b3;
+  --accent-purple: #5a5fd4;
   --accent-gradient: linear-gradient(
-    130deg,
-    #44c2c2ce 0%,
-    #4aa5f0 45%,
-    #de78dece 100%
+    135deg,
+    #00a8cc 0%,
+    #0056b3 50%,
+    #5a5fd4 100%
   );
 
   /* State Colors - Adjust for light background */
-  --success: #98c379;
-  --warning: #e6c17c;
-  --error: #e06c75;
+  --success: #00c851;
+  --warning: #ffbb33;
+  --error: #ff4444;
 
   /* Neutral Tones - Darker for light mode */
-  --text-primary: #202020;
-  --text-secondary: #282c34;
-  --text-muted: #5a6374;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
   --border: rgba(0, 0, 0, 0.1);
-  --border-hover: rgba(68, 194, 194, 0.3);
+  --border-hover: rgba(0, 212, 255, 0.3);
 
   /* Effects and Shadows - Softer for light mode */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 20px rgba(68, 194, 194, 0.2);
-  --shadow-glow-hover: 0 0 30px rgba(68, 194, 194, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.2);
+  --shadow-glow-hover: 0 0 30px rgba(0, 212, 255, 0.3);
 }
 /* =============================================
    RESET AND BASE STYLES
