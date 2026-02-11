@@ -31,13 +31,14 @@ class CategoryManager {
         this.currentCategory = category;
 
         const products = document.querySelectorAll('.product');
+        const categories = category.split(',');
 
         let visibleCount = 0;
 
         products.forEach(product => {
             const productCategory = product.dataset.category;
 
-            if (category === 'all' || productCategory === category) {
+            if (categories.includes('all') || categories.includes(productCategory)) {
                 product.style.display = 'grid';
                 product.style.animation = 'fadeIn 0.3s ease';
                 visibleCount++;
@@ -60,6 +61,19 @@ class CategoryManager {
         });
 
         activeLink.classList.add('active');
+    }
+
+    setActiveLinksByCategory(category) {
+        const allLinks = document.querySelectorAll('nav a[data-category]');
+        const categories = category.split(',');
+
+        allLinks.forEach(link => {
+            if (categories.includes(link.dataset.category)) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     }
 
     scrollToProducts() {

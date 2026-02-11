@@ -101,6 +101,18 @@ class Carousel {
             if (e.key === "ArrowLeft") this.previous();
             if (e.key === "ArrowRight") this.next();
         });
+
+        // CTA buttons filter products by category and scroll down
+        this.container.addEventListener("click", (e) => {
+            const cta = e.target.closest(".carousel-cta[data-category]");
+            if (!cta || !window.CategoryManager) return;
+
+            e.preventDefault();
+            const category = cta.dataset.category;
+            window.CategoryManager.filterByCategory(category);
+            window.CategoryManager.setActiveLinksByCategory(category);
+            window.CategoryManager.scrollToProducts();
+        });
     }
 
     goToSlide(index) {
