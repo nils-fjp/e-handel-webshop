@@ -31,7 +31,7 @@ class CategoryManager {
         this.currentCategory = category;
 
         const products = document.querySelectorAll('.product');
-        const categories = category.split(',');
+        const categories = category.split(',').map(c => c.trim()).filter(c => c.length > 0);
 
         let visibleCount = 0;
 
@@ -65,7 +65,7 @@ class CategoryManager {
 
     setActiveLinksByCategory(category) {
         const allLinks = document.querySelectorAll('nav a[data-category]');
-        const categories = category.split(',');
+        const categories = category.split(',').map(c => c.trim()).filter(c => c.length > 0);
 
         allLinks.forEach(link => {
             if (categories.includes(link.dataset.category)) {
@@ -109,12 +109,14 @@ class CategoryManager {
 
     getProductCount(category = null) {
         const cat = category || this.currentCategory;
+        const categories = cat.split(',').map(c => c.trim()).filter(c => c.length > 0);
 
-        if (cat === 'all') {
+        if (categories.includes('all')) {
             return document.querySelectorAll('.product').length;
         }
 
-        return document.querySelectorAll(`.product[data-category="${cat}"]`).length;
+        const selector = categories.map(c => `.product[data-category="${c}"]`).join(', ');
+        return document.querySelectorAll(selector).length;
     }
 }
 

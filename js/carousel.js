@@ -98,6 +98,20 @@ class Carousel {
         }
 
         document.addEventListener("keydown", (e) => {
+            const target = e.target;
+            const tagName = target && target.tagName;
+
+            // Ignore arrow key navigation when focus is inside editable controls
+            const isEditable =
+                (tagName === "INPUT") ||
+                (tagName === "TEXTAREA") ||
+                (tagName === "SELECT") ||
+                (target && target.isContentEditable);
+
+            if (isEditable) {
+                return;
+            }
+
             if (e.key === "ArrowLeft") this.previous();
             if (e.key === "ArrowRight") this.next();
         });
