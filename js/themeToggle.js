@@ -13,7 +13,6 @@ function initializeTheme() {
         body.classList.remove("light-mode");
         updateToggleButton(false);
     } else if (prefersDark) {
-        // Default to dark mode if system prefers dark and no preference is saved
         body.classList.remove("light-mode");
         updateToggleButton(false);
     } else {
